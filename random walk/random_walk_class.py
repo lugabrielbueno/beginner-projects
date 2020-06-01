@@ -28,6 +28,6 @@ class RandomWalk():
 
     def ploting(self):
         point_numbers = list(range(self.numpoints))
-        plt.scatter(self.x_points,self.y_points,c = point_numbers,cmap=self.palette_choice,s=2)
+        plt.scatter(self.x_points,self.y_points,c = point_numbers,cmap=self.palette,s=2)
         plt.show()
 
