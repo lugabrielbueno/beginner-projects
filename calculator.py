@@ -9,6 +9,65 @@ def button_value(number):
 def clean():
     inputs.delete(0,END)
 
+def button_add():
+    first_number = inputs.get()
+    global f_num
+    global operation
+    operation = 'addition'
+    f_num = float(first_number)
+    inputs.delete(0,END)
+
+def button_dif():
+    first_number = inputs.get()
+    global f_num
+    global operation
+    operation = 'subtraction'
+    f_num = float(first_number)
+    inputs.delete(0,END)
+
+def button_mult():
+    first_number = inputs.get()
+    global f_num
+    global operation
+    operation = 'multiply'
+    f_num = float(first_number)
+    inputs.delete(0,END)
+
+def button_div():
+    first_number = inputs.get()
+    global f_num
+    global operation
+    operation = 'division'
+    f_num = float(first_number)
+    inputs.delete(0,END) 
+
+def equal():
+    second_number = inputs.get()
+    inputs.delete(0,END)
+    global f_num
+    global operation
+
+    if f_num == float or second_number == float:
+        if operation == 'addition':
+            inputs.insert(0, int(f_num) + int(second_number))
+        elif operation == 'subtraction':
+            inputs.insert(0, int(f_num) - int(second_number))
+        elif operation == 'multiply':
+            inputs.insert(0,int(f_num) * int(second_number))
+        elif operation == 'division':
+            inputs.insert(0,int(f_num) * int(second_number))
+    else:
+        if operation == 'addition':
+            inputs.insert(0, f_num + float(second_number))
+        elif operation == 'subtraction':
+            inputs.insert(0, f_num - float(second_number))
+        elif operation == 'multiply':
+            inputs.insert(0,f_num * float(second_number))
+        elif operation == 'division':
+            inputs.insert(0,f_num * float(second_number))
+
+# Initialize
+
 Janela_inicial = Tk()
 Janela_inicial.title('Calculator')
 Janela_inicial['bg'] = 'grey'
@@ -34,12 +93,12 @@ bt7 = Button(Janela_inicial,text = '7',command=lambda: button_value(7),padx=20 ,
 bt8 = Button(Janela_inicial,text = '8',command=lambda: button_value(8),padx=20 ,pady=20)
 bt9 = Button(Janela_inicial,text = '9',command=lambda: button_value(9),padx=20 ,pady=20)
 bt0 = Button(Janela_inicial,text = '0',command=lambda: button_value(0),padx=20 ,pady=20)
-btdot = Button(Janela_inicial,text = '.',command=lambda: button_value(1),padx=22 ,pady=20)
-btbar = Button(Janela_inicial,text = '/',command = lambda: button_value(1),padx=22 ,pady=20)
-btplus = Button(Janela_inicial,text = '+',command=lambda: button_value(1),padx=22 ,pady=20)
-btsub = Button(Janela_inicial,text = '-',command=lambda: button_value(1),padx=25 ,pady=20)
-btequal = Button(Janela_inicial,text = '=',command=lambda: button_value(1),padx=22 ,pady=20)
-btmult = Button(Janela_inicial,text = '*',command= lambda: button_value(1),padx=25 ,pady=20)
+btdot = Button(Janela_inicial,text = '.',command=lambda: button_value('.'),padx=22 ,pady=20)
+btbar = Button(Janela_inicial,text = '/',command = button_div,padx=22 ,pady=20)
+btplus = Button(Janela_inicial,text = '+',command=button_add,padx=22 ,pady=20)
+btsub = Button(Janela_inicial,text = '-',command=button_dif,padx=25 ,pady=20)
+btequal = Button(Janela_inicial,text = '=',command=equal,padx=22 ,pady=20)
+btmult = Button(Janela_inicial,text = '*',command= button_mult,padx=25 ,pady=20)
 btclear = Button(Janela_inicial,text = 'Clear',command = lambda: clean(),padx = 90, pady = 20)
 
 
