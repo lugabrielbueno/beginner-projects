@@ -55,7 +55,7 @@ def equal():
         elif operation == 'multiply':
             inputs.insert(0,int(f_num) * int(second_number))
         elif operation == 'division':
-            inputs.insert(0,int(f_num) * int(second_number))
+            inputs.insert(0,int(f_num) / int(second_number))
     else:
         if operation == 'addition':
             inputs.insert(0, f_num + float(second_number))
@@ -64,7 +64,7 @@ def equal():
         elif operation == 'multiply':
             inputs.insert(0,f_num * float(second_number))
         elif operation == 'division':
-            inputs.insert(0,f_num * float(second_number))
+            inputs.insert(0,f_num / float(second_number))
 
 # Initialize
 
