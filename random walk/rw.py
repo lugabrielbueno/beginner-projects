@@ -1,11 +1,11 @@
 from tkinter import *
 from random_walk_class import RandomWalk
-
+from sys import exit
 root = Tk()
 root.title('Random Walk Graphic')
-root.geometry('300x340+450+250')
-root.minsize(300,340)
-root.maxsize(300,340)
+root.geometry('260x310+450+250')
+root.minsize(260,310)
+root.maxsize(260,310)
 
 
 # Functions
@@ -15,7 +15,6 @@ colorvar = IntVar()
 def points(points):
     global num_points
     num_points = points
-
 
 def palettes(color):
     global palette
@@ -28,16 +27,16 @@ def go():
     ok.direction()
     ok.ploting()
 
-
 # Wigets
 
-label1 = Label(text = 'Pallete of colors')
-label2 = Label(text = '    ')
-label3 = Label(text= 'Number of steps')
+label1 = Label(text = 'Pallete of colors',font= 'Calibri 10 italic')
+label2 = Label(text = '      ')
+label3 = Label(text= 'Number of steps',font = 'Calibri 10 italic')
 
 
 
-rw  = Button(text = 'Random Walk',padx = 100,pady = 40, command = go)
+rw  = Button(text = 'Random Walk',padx = 30,pady = 20, command = go,borderwidth= 3, font = 'Calibri 12 bold')
+exits = Button(text = 'Exit',padx = 20 ,pady = 5, command = exit ,borderwidth = 3,font = 'Calibri 12 bold')
 rw1 = Radiobutton(text = 'Inferno',variable = colorvar,value = 1,command =lambda: palettes('inferno'))
 rw2 = Radiobutton(text = 'Rainbow',variable = colorvar,value = 2,command =lambda:palettes('rainbow'))
 rw3 = Radiobutton(text = 'Terrain',variable = colorvar,value = 3,command =lambda:palettes('terrain'))
@@ -55,7 +54,8 @@ points50 =Radiobutton(text = '50000',variable = pointsvar,value = 5 ,command =la
 
 #Layout
 
-rw.grid(row = 0 , column = 0 ,columnspan = 4)
+rw.grid(row = 0 , column = 0,columnspan = 4)
+exits.grid(row = 9,column = 2)
 label1.grid(row= 1, column = 0,sticky = 'w')
 label2.grid(row = 1,column = 1)
 label3.grid(row = 1, column = 2,sticky = 'w')
