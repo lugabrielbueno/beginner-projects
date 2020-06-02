@@ -1,6 +1,7 @@
 from tkinter import *
 from random_walk_class import RandomWalk
 from sys import exit
+
 root = Tk()
 root.title('Random Walk Graphic')
 root.geometry('260x310+450+250')
@@ -15,6 +16,7 @@ colorvar = IntVar()
 def points(points):
     global num_points
     num_points = points
+
 
 def palettes(color):
     global palette
